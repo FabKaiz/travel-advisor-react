@@ -8,7 +8,8 @@ import useStyles from './styles';
 
 const Map = ({ setCoordinates, setBounds, coordinates, places }) => {
   const classes = useStyles();
-  const isMobile = useMediaQuery('(min-width: 600px)');
+  const isDesktop = useMediaQuery('(min-width:600px)');
+
 
   return (
     <div  className={classes.mapContainer}>
@@ -32,14 +33,19 @@ const Map = ({ setCoordinates, setBounds, coordinates, places }) => {
             lng={place.longitude}
             key={i}
           >
-            {/* <LocationOnIcon color='primary' fontSize='large' /> */}
-            <Paper elevation={3} className={classes.paper}>
-              <Typography className={classes.typography} variant='subtitle2' gutterBottom>
-                {place.name}
-              </Typography>
-              <img className={place.pointer} src={place.photo ? place.photo.images.large.url : 'https://www.foodserviceandhospitality.com/wp-content/uploads/2016/09/Restaurant-Placeholder-001.jpg'} alt={place.name} />
-              <Rating size='small' value={Number(place.rating)} readOnly />
-            </Paper>
+            {
+              isDesktop ? (
+                <Paper elevation={3} className={classes.paper}>
+                  <Typography className={classes.typography} variant='subtitle2' gutterBottom>
+                    {place.name}
+                  </Typography>
+                  <img className={place.pointer} src={place.photo ? place.photo.images.large.url : 'https://www.foodserviceandhospitality.com/wp-content/uploads/2016/09/Restaurant-Placeholder-001.jpg'} alt={place.name} />
+                  <Rating size='small' value={Number(place.rating)} readOnly />
+                </Paper>
+              ) : (
+                <LocationOnIcon color='primary' fontSize='large' />
+              )
+            }
           </div>
         ))}
       </GoogleMapReact> 

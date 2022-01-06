@@ -21,7 +21,7 @@ const PlaceDetails = ({ place }) => {
 
         <Box display='flex' justifyContent='space-between'>
           <Rating value={Number(place.rating)} readOnly />
-          <Typography gutterBottom variant='subtitle1'>out of {place.num_reviews} reviews</Typography>
+          <Typography gutterBottom variant='subtitle1'>Out of {place.num_reviews} reviews</Typography>
         </Box>
 
         <Box display='flex' justifyContent='space-between'>
