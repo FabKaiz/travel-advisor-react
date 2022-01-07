@@ -2,7 +2,7 @@
 'Travel Advisor' project where you can find hotels, restaurants & attractions around you.  
 What i used: Google maps API, RapidApi Travel Advisor and Weather API, MaterialUI for React.  
 
-#### Result :  [Here](https://travel-advisor-fabkaiz.netlify.app/)  👈
+#### Result :  [Here](https://travel-advisor-fabkaiz.netlify.app/)  👈 (make sure you allow geolocation)
 
 ## Getting Started with Create React App
 
